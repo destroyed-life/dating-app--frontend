@@ -1,7 +1,6 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
 import styles from '../styles/Home.module.css';
-import 'antd/dist/antd.css';
 
 const Login = () => {
   const onFinish = (values: any) => {
