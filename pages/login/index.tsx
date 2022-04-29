@@ -1,23 +1,24 @@
 /** @jsxImportSource @emotion/react */
 import { css, jsx } from '@emotion/react';
+import Link from 'next/link';
 
 const Login = () => {
   return (
-    <header css={headerstyle} className="Header">
+    <header css={headerstyle}>
       <h1 css={logostyle}>
-        <a href="#">
-          <img src="img/Log.svg" alt="logoimg"></img>
+        <a href="/">
+          <img src="img/Log.svg" alt="logoimg" />
         </a>
       </h1>
-      <ul css={menustyle} className="menu">
+      <ul css={menustyle}>
         <li css={liststyle}>
-          <a href="#">홈</a>
+          <a href="/">홈</a>
         </li>
         <li css={liststyle}>
-          <a href="#">타임라인</a>
+          <a href="/">타임라인</a>
         </li>
         <li css={liststyle}>
-          <a href="#">설정</a>
+          <a href="/">설정</a>
         </li>
       </ul>
     </header>
