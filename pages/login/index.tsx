@@ -26,6 +26,7 @@ const Login = () => {
 
 const logostyle = css`
   margin: 0;
+  width: 200px;
 `;
 
 const headerstyle = css`
