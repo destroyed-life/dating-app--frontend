@@ -3,7 +3,10 @@
   "extends": [
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended", 
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -38,7 +41,36 @@
     ],
     "indent": ["error", 2],
     "@typescript-eslint/no-empty-interface": "off",
-    "no-empty-interface": "off"
+    "no-empty-interface": "off",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "single", "multiple"]
+      }
+    ],
+    // sort for imports.
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin", // Built-in types are first
+          "external", // external types are second
+          "internal",
+          ["sibling", "parent"], // Then sibling and parent types. They can be mingled together
+          "index", // Then the index file
+          "object"
+          // Then the rest: internal and external type
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc", // sort in ascending order. Options: ["ignore", "asc", "desc"]
+          "caseInsensitive": true // ignore case. Options: [true, false]
+        }
+      }
+    ]
   },
   "globals": {
     "React": "writable"
