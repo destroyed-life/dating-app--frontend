@@ -1,24 +1,24 @@
 /** @jsxImportSource @emotion/react */
 import { css, jsx } from '@emotion/react';
-import Link from 'next/link';
+import ExtraLink from '../../components/ExtraLink';
 
 const Login = () => {
   return (
     <header css={headerstyle}>
       <h1 css={logostyle}>
-        <a href="/">
+        <ExtraLink href="/">
           <img src="img/Log.svg" alt="logoimg" />
-        </a>
+        </ExtraLink>
       </h1>
       <ul css={menustyle}>
         <li css={liststyle}>
-          <a href="/">홈</a>
+          <ExtraLink href="/">홈</ExtraLink>
         </li>
         <li css={liststyle}>
-          <a href="/">타임라인</a>
+          <ExtraLink href="/">타임라인</ExtraLink>
         </li>
         <li css={liststyle}>
-          <a href="/">설정</a>
+          <ExtraLink href="/">설정</ExtraLink>
         </li>
       </ul>
     </header>
