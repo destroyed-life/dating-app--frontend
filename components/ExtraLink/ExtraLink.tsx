@@ -11,7 +11,7 @@ const ExtraLink = ({
   replace,
   scroll,
   shallow,
-  passHref,
+  passHref = true,
   prefetch,
   locale,
   ...aTagProps
