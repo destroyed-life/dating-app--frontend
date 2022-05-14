@@ -3,6 +3,9 @@
  * @param price String
  * @returns String
  */
-export const priceToString = (price: string) => {
-  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+type priceToStringParams = string | number;
+
+export const priceToString = (price: priceToStringParams) => {
+  const priceNumber = typeof price === 'string' ? Number(price) : price;
+  return new Intl.NumberFormat().format(priceNumber);
 };

@@ -1,5 +1,5 @@
 {
-  "plugins": ["@typescript-eslint", "prettier", "simple-import-sort"],
+  "plugins": ["@typescript-eslint", "prettier", "simple-import-sort", "import"],
   "extends": [
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended", 
@@ -57,9 +57,11 @@
           {
             "groups": [
               // Packages `react` related packages come first.
-              ["^react", "^next", "^@?\\w"],
+              ["^react$", "react-dom", "^next"],
+              ["^@?\\w"],
               // Internal packages.
-              ["^(@|components)(/.*|$)"],
+              ["^@+(types|(hooks|utils)(/.*|$))"],
+              ["^@components(/.*|$)"],
               // Side effect imports.
               ["^\\u0000"],
               // Parent imports. Put `..` last.

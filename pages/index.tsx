@@ -1,6 +1,10 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+
 import { css } from '@emotion/react';
+
+import useLoginHook from '@hooks/useLoginHook';
+import { priceToString } from '@utils/string';
 
 import { Button } from '../stories/Button';
 
@@ -21,7 +25,6 @@ const Home: NextPage = () => {
 };
 
 const container = css`
-  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
 `;
